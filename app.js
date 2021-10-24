@@ -3,3 +3,5 @@ function sayHello(name) {
 }
 
 sayHello("Adam");
+
+setInterval(sayHello, 2000, "Adam");
