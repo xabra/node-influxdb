@@ -1,10 +1,17 @@
 let iterationCount = 0;
 let interval_ms = 1;
+const start = Date.now();
 
 function intervalTask() {
   if (iterationCount % 1000 == 0) {
-    // console.log only every 1000 iterations
-    console.log("Iterations: " + iterationCount);
+    // log every N iterations
+    let elapsedTime = Date.now() - start;
+
+    console.log(
+      `Iteration: ${iterationCount}\tTime per iteration (ms): ${
+        elapsedTime / iterationCount
+      }`
+    );
   }
   iterationCount++;
 }
