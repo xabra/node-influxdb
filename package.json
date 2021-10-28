@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/xabra/node-influxdb/issues"
   },
-  "homepage": "https://github.com/xabra/node-influxdb#readme"
+  "homepage": "https://github.com/xabra/node-influxdb#readme",
+  "dependencies": {
+    "@influxdata/influxdb-client": "^1.20.0"
+  }
 }
