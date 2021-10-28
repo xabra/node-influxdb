@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Simple node server to send test data to influxdb",
   "main": "app.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
