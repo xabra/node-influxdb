@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/xabra/node-influxdb#readme",
   "dependencies": {
-    "@influxdata/influxdb-client": "^1.20.0"
+    "@influxdata/influxdb-client": "^1.20.0",
+    "dotenv": "^10.0.0"
   }
 }
