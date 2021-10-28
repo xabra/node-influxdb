@@ -111,9 +111,4 @@ class TrianglewaveGenerator extends SignalGenerator {
   }
 }
 
-export {
-  SignalGenerator,
-  SinewaveGenerator,
-  SquarewaveGenerator,
-  TrianglewaveGenerator,
-};
+export { SinewaveGenerator, SquarewaveGenerator, TrianglewaveGenerator };
