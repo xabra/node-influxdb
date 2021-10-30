@@ -14,7 +14,7 @@ const token = process.env.INFLUXDB_TOKEN;
 const org = process.env.INFLUXDB_ORG;
 const bucket = process.env.INFLUXDB_BUCKET;
 const client = new InfluxDB({
-  url: INFLUXDB_URL,
+  url: process.env.INFLUXDB_URL,
   token: token,
 });
 const writeApi = client.getWriteApi(org, bucket);
@@ -33,7 +33,7 @@ for (let i = 0; i < 20; i++) {
   let elapsed = t - t0;
   console.log(`${elapsed} ${s1} ${s2}`);
 
-  const point = new Point("mem").floatField("Elapsed3", elapsed);
+  const point = new Point("mem").floatField("index", i);
   writeApi.writePoint(point);
 
   t = Date.now() / 1000; //Update time, seconds
