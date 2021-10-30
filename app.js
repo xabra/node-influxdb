@@ -31,7 +31,7 @@ for (let i = 0; i < 20; i++) {
   let s1 = gen1.signal(t);
   let s2 = gen2.signal(t);
   let elapsed = t - t0;
-  console.log(`${elapsed} ${s1} ${s2} ${s1 + s2}`);
+  console.log(`${elapsed} ${s1} ${s2}`);
 
   const point = new Point("mem").floatField("Elapsed3", elapsed);
   writeApi.writePoint(point);
