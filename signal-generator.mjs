@@ -111,4 +111,27 @@ class TrianglewaveGenerator extends SignalGenerator {
   }
 }
 
-export { SinewaveGenerator, SquarewaveGenerator, TrianglewaveGenerator };
+class NoiseGenerator extends SignalGenerator {
+  constructor(startTime, amplitude, offset) {
+    super(
+      startTime,
+      1, // Period
+      0, // DutyFactor not used
+      0, // phaseShiftRad,
+      amplitude,
+      offset
+    ); // call the super class constructor
+  }
+
+  // Methods
+  signal() {
+    return (Math.random() - 0.5) * this.amplitude + this.amplitudeOffset;
+  }
+}
+
+export {
+  SinewaveGenerator,
+  SquarewaveGenerator,
+  TrianglewaveGenerator,
+  NoiseGenerator,
+};
