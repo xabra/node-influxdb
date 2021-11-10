@@ -125,7 +125,7 @@ class NoiseGenerator extends SignalGenerator {
 
   // Methods
   signal() {
-    return (Math.random() - 0.5) * this.amplitude + this.amplitudeOffset;
+    return (2.0 * Math.random() - 1.0) * this.amplitude + this.amplitudeOffset;
   }
 }
 
