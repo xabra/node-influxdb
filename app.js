@@ -28,7 +28,7 @@ let deltat = 1000; // Sample time, ms
 let maxSampleCount = 1000;
 let sampleCount = 0;
 let gen1 = new SinewaveGenerator(startTime, 20, 0, 1.0, 0);
-let gen2 = new SquarewaveGenerator(startTime, 1, 0.1, 0, 1.0, 0);
+let gen2 = new SquarewaveGenerator(startTime, 30, 0.2, 0, 1.0, 0);
 let gen3 = new NoiseGenerator(startTime, 0.2, 0);
 
 //Write points loop
@@ -40,6 +40,7 @@ let intervalHandle = setInterval(() => {
     let elapsedTime = t - startTime;
     console.log(
       `${sampleCount} ${elapsedTime} ${s1} ${s2} ${s3} ${s1 + s2 + s3}`
+      //`${sampleCount} ${elapsedTime}  ${s2}` //Squarewave only
     );
     const point = new Point("testData3")
       .floatField("measurementCount", sampleCount)
@@ -49,6 +50,7 @@ let intervalHandle = setInterval(() => {
       .floatField("s3-noise", s3)
       .floatField("Summed Signal", s1 + s2 + s3);
     writeApi.writePoint(point);
+
     t = Date.now() / 1000; //Update time, second
     sampleCount++;
   } else {
